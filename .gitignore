@@ -1,0 +1,6 @@
+# eclipse specific
+
+build/**
+.project
+.classpath
+.settings/
