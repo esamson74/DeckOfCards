@@ -1,0 +1,1661 @@
+{
+	"info": {
+		"_postman_id": "438dc59d-f3b3-41ac-b769-7adf86e6145d",
+		"name": "DeckOfCards",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "newGame",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/newGame",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"newGame"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "newGame-GameStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/newGame",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"newGame"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:32:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "A Game is already in progress!"
+				},
+				{
+					"name": "newGame-GameNotStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/newGame",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"newGame"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:31:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "New Game has started!"
+				}
+			]
+		},
+		{
+			"name": "deckInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/deckInfo",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"deckInfo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "deckInfo-GameStarted-NoPlayer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/deckInfo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"deckInfo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:32:49 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "198"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Heart\": \"King,Queen,Jack,10,9,8,7,6,5,4,3,2,Ace\",\n    \"Spade\": \"King,Queen,Jack,10,9,8,7,6,5,4,3,2,Ace\",\n    \"Club\": \"King,Queen,Jack,10,9,8,7,6,5,4,3,2,Ace\",\n    \"Diamond\": \"King,Queen,Jack,10,9,8,7,6,5,4,3,2,Ace\"\n}"
+				},
+				{
+					"name": "deckInfo-GameNotStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/deckInfo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"deckInfo"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:34:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				},
+				{
+					"name": "deckInfo-GameStarted-2Players-5Cards-Each",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/deckInfo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"deckInfo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:34:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Heart\": \"Queen,Jack,10,9,8,7,3,2,Ace\",\n    \"Spade\": \"King,Jack,10,8,7,6,5,4,3,2,Ace\",\n    \"Club\": \"King,Jack,10,8,6,5,4,3,2\",\n    \"Diamond\": \"King,Queen,Jack,10,9,8,7,6,5,4,3,2,Ace\"\n}"
+				}
+			]
+		},
+		{
+			"name": "quitGame",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/quitGame",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"quitGame"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "quitGame-GameStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/quitGame",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"quitGame"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:30:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Thanks for playing DeckOfCards!"
+				},
+				{
+					"name": "quitGame-GameNotStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/quitGame",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"quitGame"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:29:51 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				}
+			]
+		},
+		{
+			"name": "addPlayer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/addPlayer/{{howManyCards}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"addPlayer",
+						"{{howManyCards}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "addPlayer-GameStarted-SecondPlayer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/addPlayer/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"addPlayer",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:36:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Player-2 has joined the game!"
+				},
+				{
+					"name": "addPlayer-GameNotStarted",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/addPlayer/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"addPlayer",
+								"5"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:35:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				},
+				{
+					"name": "addPlayer-GameStarted-FirstPlayer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/addPlayer/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"addPlayer",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:35:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Player-1 has joined the game!"
+				}
+			]
+		},
+		{
+			"name": "listPlayers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/listPlayers",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"listPlayers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "listPlayers-GameNotStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/listPlayers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"listPlayers"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:40:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				},
+				{
+					"name": "listPlayers-GameStarted-2Players",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/listPlayers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"listPlayers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:41:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Player-1\",\n        \"score\": 39\n    },\n    {\n        \"name\": \"Player-2\",\n        \"score\": 36\n    }\n]"
+				},
+				{
+					"name": "listPlayers-GameStarted-3Players",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/listPlayers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"listPlayers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:41:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Player-3\",\n        \"score\": 40\n    },\n    {\n        \"name\": \"Player-1\",\n        \"score\": 39\n    },\n    {\n        \"name\": \"Player-2\",\n        \"score\": 36\n    }\n]"
+				},
+				{
+					"name": "listPlayers-GameStarted-NoPlayer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/listPlayers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"listPlayers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:40:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
+		},
+		{
+			"name": "listCards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/listCards/{{playerId}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"listCards",
+						"{{playerId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "listCards-GameNotStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/listCards/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"listCards",
+								"1"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:42:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				},
+				{
+					"name": "listCards-GameStarted-PlayerNotFound",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/listCards/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"listCards",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:42:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "No Player was found!"
+				},
+				{
+					"name": "listCards-GameStarted-Player1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/listCards/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"listCards",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:43:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"suit\": \"HEART\",\n        \"rank\": \"JACK\",\n        \"score\": 11,\n        \"name\": \"Heart\"\n    },\n    {\n        \"suit\": \"DIAMOND\",\n        \"rank\": \"EIGHT\",\n        \"score\": 8,\n        \"name\": \"Diamond\"\n    },\n    {\n        \"suit\": \"DIAMOND\",\n        \"rank\": \"FIVE\",\n        \"score\": 5,\n        \"name\": \"Diamond\"\n    },\n    {\n        \"suit\": \"SPADE\",\n        \"rank\": \"QUEEN\",\n        \"score\": 12,\n        \"name\": \"Spade\"\n    },\n    {\n        \"suit\": \"CLUB\",\n        \"rank\": \"FIVE\",\n        \"score\": 5,\n        \"name\": \"Club\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "dealCards",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/dealCards/{{playerId}}/{{howManyCards}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"dealCards",
+						"{{playerId}}",
+						"{{howManyCards}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "dealCards-GameStarted-FirstPlayer-Having5Cards-Deal5Cards",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/dealCards/1/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"dealCards",
+								"1",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:45:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "562"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"suit\": \"CLUB\",\n        \"rank\": \"TEN\",\n        \"score\": 10,\n        \"name\": \"Club\"\n    },\n    {\n        \"suit\": \"DIAMOND\",\n        \"rank\": \"JACK\",\n        \"score\": 11,\n        \"name\": \"Diamond\"\n    },\n    {\n        \"suit\": \"CLUB\",\n        \"rank\": \"EIGHT\",\n        \"score\": 8,\n        \"name\": \"Club\"\n    },\n    {\n        \"suit\": \"CLUB\",\n        \"rank\": \"NINE\",\n        \"score\": 9,\n        \"name\": \"Club\"\n    },\n    {\n        \"suit\": \"SPADE\",\n        \"rank\": \"ACE\",\n        \"score\": 1,\n        \"name\": \"Spade\"\n    },\n    {\n        \"suit\": \"HEART\",\n        \"rank\": \"KING\",\n        \"score\": 13,\n        \"name\": \"Heart\"\n    },\n    {\n        \"suit\": \"HEART\",\n        \"rank\": \"THREE\",\n        \"score\": 3,\n        \"name\": \"Heart\"\n    },\n    {\n        \"suit\": \"HEART\",\n        \"rank\": \"ACE\",\n        \"score\": 1,\n        \"name\": \"Heart\"\n    },\n    {\n        \"suit\": \"SPADE\",\n        \"rank\": \"JACK\",\n        \"score\": 11,\n        \"name\": \"Spade\"\n    },\n    {\n        \"suit\": \"HEART\",\n        \"rank\": \"FIVE\",\n        \"score\": 5,\n        \"name\": \"Heart\"\n    }\n]"
+				},
+				{
+					"name": "dealCards-GameNotStarted",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/dealCards/1/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"dealCards",
+								"1",
+								"5"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:44:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				},
+				{
+					"name": "dealCards-GameStarted-NoPlayer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/dealCards/1/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"dealCards",
+								"1",
+								"5"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:44:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "No Player was found!"
+				}
+			]
+		},
+		{
+			"name": "undealtCards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/undealtCards",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"undealtCards"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "undealtCards-GameStarted-OnePlayer-5Cards",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/undealtCards",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"undealtCards"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:48:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"HEART\": 13,\n    \"CLUB\": 12,\n    \"DIAMOND\": 11,\n    \"SPADE\": 11\n}"
+				},
+				{
+					"name": "undealtCards-GameNotStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/undealtCards",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"undealtCards"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:46:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				},
+				{
+					"name": "undealtCards-3Players-5CardsEach",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/undealtCards",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"undealtCards"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:48:41 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"HEART\": 8,\n    \"CLUB\": 9,\n    \"DIAMOND\": 10,\n    \"SPADE\": 10\n}"
+				},
+				{
+					"name": "undealtCards-GameStarted-NoPlayer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/undealtCards",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"undealtCards"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:47:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"HEART\": 13,\n    \"CLUB\": 13,\n    \"DIAMOND\": 13,\n    \"SPADE\": 13\n}"
+				}
+			]
+		},
+		{
+			"name": "removePlayer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/removePlayer/{{playerId}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"removePlayer",
+						"{{playerId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "removePlayer-GameNotStarted",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/removePlayer/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"removePlayer",
+								"3"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:37:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				},
+				{
+					"name": "removePlayer-GameStarted-SecondPlayer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/removePlayer/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"removePlayer",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:39:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Player-2 has left the game!"
+				},
+				{
+					"name": "removePlayer-GameStarted-FirstPlayer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/removePlayer/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"removePlayer",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:38:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Player-1 has left the game!"
+				},
+				{
+					"name": "removePlayer-GameStarted-NoPlayer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/removePlayer/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"removePlayer",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:38:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Player not found!"
+				}
+			]
+		},
+		{
+			"name": "shuffle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{context}}/shuffle",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{context}}",
+						"shuffle"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "shuffle-GameNotStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/shuffle",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"shuffle"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:49:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": "Game is not started!"
+				},
+				{
+					"name": "shuffle-GameStarted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{context}}/shuffle",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{context}}",
+								"shuffle"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 Nov 2020 15:49:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache TomEE"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

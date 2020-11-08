@@ -1,0 +1,24 @@
+{
+	"id": "21215092-a7ff-4b7e-8a5f-85078e5d5d84",
+	"values": [
+		{
+			"key": "context",
+			"value": "DeckOfCards",
+			"enabled": true
+		},
+		{
+			"key": "howManyCards",
+			"value": "5",
+			"enabled": true
+		},
+		{
+			"key": "playerId",
+			"value": "1",
+			"enabled": true
+		}
+	],
+	"name": "DeckOfCards Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2020-11-08T15:57:08.702Z",
+	"_postman_exported_using": "Postman/7.34.0"
+}

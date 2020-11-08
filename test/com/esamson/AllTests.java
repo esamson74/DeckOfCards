@@ -9,6 +9,7 @@ import com.esamson.entity.CardTest;
 import com.esamson.entity.DeckTest;
 import com.esamson.entity.GameTest;
 import com.esamson.entity.PlayerTest;
+import com.esamson.service.GameServiceTest;
 
 /**
  * TestSuite.
@@ -21,6 +22,7 @@ import com.esamson.entity.PlayerTest;
 	PlayerTest.class, 
 	DeckTest.class, 
 	CardTest.class, 
-	GameTest.class
+	GameTest.class,
+	GameServiceTest.class
 })
 public class AllTests {}

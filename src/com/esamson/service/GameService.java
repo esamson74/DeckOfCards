@@ -149,7 +149,7 @@ public class GameService {
 				Gson gson = new Gson();
 				response = Response.ok(gson.toJson(player.getCards())).build();
 			} else {
-				response = Response.status(Response.Status.FORBIDDEN).entity(NO_PLAYER).build();
+				response = Response.status(Response.Status.NOT_FOUND).entity(NO_PLAYER).build();
 			}
 		}
 		return response;
@@ -174,7 +174,7 @@ public class GameService {
 				Gson gson = new Gson();
 				response = Response.ok(gson.toJson(player.getCards())).build();
 			} else {
-				response = Response.status(Response.Status.FORBIDDEN).entity(NO_PLAYER).build();
+				response = Response.status(Response.Status.NOT_FOUND).entity(NO_PLAYER).build();
 			}
 		}
 		return response;
@@ -213,7 +213,7 @@ public class GameService {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
 			game.getCurrentDeck().shuffle();
-			response = Response.ok().build();
+			response = Response.ok("").build();
 		}
 		return response;
 	}
