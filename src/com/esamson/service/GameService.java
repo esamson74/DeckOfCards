@@ -1,7 +1,6 @@
 package com.esamson.service;
 
 import java.text.MessageFormat;
-import java.util.List;
 import java.util.Map;
 
 import javax.ws.rs.GET;
@@ -9,10 +8,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.esamson.entity.Card;
 import com.esamson.entity.Game;
 import com.esamson.entity.Player;
 import com.esamson.entity.Suit;
@@ -50,7 +48,7 @@ public class GameService {
 	 */
 	@GET
 	@Path("/newGame")
-	@Produces("text/plain")
+	@Produces(MediaType.TEXT_PLAIN)
 	public Response newGame() {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_EXISTS).build();
 		if (game == null) {
@@ -67,7 +65,7 @@ public class GameService {
 	 */
 	@GET
 	@Path("/quitGame")
-	@Produces("text/plain")
+	@Produces(MediaType.TEXT_PLAIN)
 	public Response quitGame() {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
@@ -85,7 +83,7 @@ public class GameService {
 	 */
 	@PUT
 	@Path("/addPlayer/{cards}")
-	@Produces("text/plain")
+	@Produces(MediaType.TEXT_PLAIN)
 	public Response addPlayer(@PathParam("cards") int cards) {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
@@ -102,9 +100,9 @@ public class GameService {
 	 * @return Response
 	 */
 	@PUT
-	@Path("/removePlayer")
-	@Produces("text/plain")
-	public Response removePlayer(@QueryParam("id") int id) {
+	@Path("/removePlayer/{id}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response removePlayer(@PathParam("id") int id) {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
 			String playerName = game.removePlayer(id);
@@ -124,7 +122,7 @@ public class GameService {
 	 */
 	@GET
 	@Path("/listPlayers")
-	@Produces("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response listPlayers() {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
@@ -140,9 +138,9 @@ public class GameService {
 	 * @param id
 	 * @return Response
 	 */
-	@PUT
+	@GET
 	@Path("/listCards/{id}")
-	@Produces("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response listCards(@PathParam("id") int id) {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
@@ -166,7 +164,7 @@ public class GameService {
 	 */
 	@PUT
 	@Path("/dealCards/{id}/{amount}")
-	@Produces("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response dealCards(@PathParam("id") int id, @PathParam("amount") int amount) {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
@@ -181,10 +179,10 @@ public class GameService {
 		}
 		return response;
 	}
-	
+
 	@GET
 	@Path("/undealtCards")
-	@Produces("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response undealtCards() {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
@@ -194,16 +192,28 @@ public class GameService {
 		}
 		return response;
 	}
-	
+
 	@GET
 	@Path("/deckInfo")
-	@Produces("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response deckInfo() {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
 			Map<String, String> deckInfo = game.getCurrentDeck().getDeckInfo();
 			Gson gson = new Gson();
 			response = Response.ok(gson.toJson(deckInfo)).build();
+		}
+		return response;
+	}
+
+	@GET
+	@Path("/shuffle")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response shuffle() {
+		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
+		if (game != null) {
+			game.getCurrentDeck().shuffle();
+			response = Response.ok().build();
 		}
 		return response;
 	}
