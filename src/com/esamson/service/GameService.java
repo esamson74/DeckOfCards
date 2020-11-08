@@ -186,7 +186,7 @@ public class GameService {
 	public Response undealtCards() {
 		Response response = Response.status(Response.Status.FORBIDDEN).entity(GAME_NOT_STARTED).build();
 		if (game != null) {
-			Map<Suit, Integer> undealtCards = game.getCurrentDeck().getUndealtCards();
+			Map<Suit, Long> undealtCards = game.getCurrentDeck().getUndealtCards();
 			Gson gson = new Gson();
 			response = Response.ok(gson.toJson(undealtCards)).build();
 		}

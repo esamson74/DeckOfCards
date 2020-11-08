@@ -1,6 +1,8 @@
 package com.esamson.entity;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.junit.Test;
 
@@ -26,5 +28,14 @@ public class DeckTest extends TestCase {
 		assertEquals(41, deck.getCards().size());
 		deck.dealCards(45);
 		assertEquals(0, deck.getCards().size());
+	}
+
+	@Test
+	public void testGetUndealtCards() {
+		Map<Suit, Long> results = deck.getUndealtCards();
+		assertEquals(4, results.size());
+		for (Entry<Suit, Long> entry : results.entrySet()) {
+			assertEquals(Long.valueOf(13), entry.getValue());
+		}
 	}
 }

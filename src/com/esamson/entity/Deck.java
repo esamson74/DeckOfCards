@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * Deck of Cards.
@@ -33,7 +34,7 @@ public class Deck {
 				cards.add(new Card(suit, rank));
 			}
 		}
-		//Collections.shuffle(cards);
+		// Collections.shuffle(cards);
 		shuffle();
 	}
 
@@ -69,8 +70,8 @@ public class Deck {
 	 * 
 	 * @return Map
 	 */
-	public Map<Suit, Integer> getUndealtCards() {
-		// TODO: Needs improvement :(
+	/*public Map<Suit, Integer> getUndealtCardsOld() {
+		// TODO: Original method :(
 
 		int clubCounter = 0;
 		int diamondCounter = 0;
@@ -100,6 +101,15 @@ public class Deck {
 		suits.put(Suit.SPADE, spadeCounter);
 
 		return suits;
+	}*/
+
+	/**
+	 * Gets the undealt Cards of the Deck. (Improved)
+	 * 
+	 * @return Map
+	 */
+	public Map<Suit, Long> getUndealtCards() {
+		return cards.stream().collect(Collectors.groupingBy(Card::getSuit, Collectors.counting()));
 	}
 
 	/**
@@ -141,6 +151,7 @@ public class Deck {
 
 	/**
 	 * Sorts the given Cards with descending order.
+	 * 
 	 * @param cards
 	 * @return
 	 */
